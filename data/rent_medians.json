@@ -1,0 +1,17 @@
+[
+  {
+    "postcode": "2050",
+    "dwelling_type": "1br",
+    "median_weekly_rent": 700
+  },
+  {
+    "postcode": "2042",
+    "dwelling_type": "1br",
+    "median_weekly_rent": 650
+  },
+  {
+    "postcode": "2037",
+    "dwelling_type": "studio",
+    "median_weekly_rent": 590
+  }
+]

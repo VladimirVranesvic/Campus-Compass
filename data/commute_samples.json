@@ -1,0 +1,20 @@
+[
+  {
+    "from_postcode": "2068",
+    "to_campus": "USYD Camperdown",
+    "am_peak_minutes": 35,
+    "step_free": true
+  },
+  {
+    "from_postcode": "2113",
+    "to_campus": "USYD Camperdown",
+    "am_peak_minutes": 42,
+    "step_free": true
+  },
+  {
+    "from_postcode": "2204",
+    "to_campus": "USYD Camperdown",
+    "am_peak_minutes": 27,
+    "step_free": true
+  }
+]

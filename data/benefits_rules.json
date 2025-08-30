@@ -1,0 +1,38 @@
+{
+  "youth_allowance": {
+    "age_min": 18,
+    "study_load": "full_time",
+    "income_threshold_weekly": 588,
+    "independence_paths": [
+      "worked_30_of_52_weeks",
+      "regional_relocation",
+      "over_22"
+    ],
+    "docs": [
+      "Photo ID",
+      "Enrolment evidence",
+      "Bank statements (13 weeks)",
+      "Tax file number"
+    ]
+  },
+  "abstudy": {
+    "eligibility_hint": "Aboriginal or Torres Strait Islander, full-time study or apprenticeship",
+    "docs": [
+      "Photo ID",
+      "Enrolment evidence",
+      "Bank statements",
+      "Tax file number"
+    ]
+  },
+  "relocation_scholarship": {
+    "requires": [
+      "youth_allowance_receipt",
+      "move_distance_over_90km"
+    ],
+    "docs": [
+      "New lease/tenancy",
+      "Previous address proof",
+      "Enrolment evidence"
+    ]
+  }
+}
