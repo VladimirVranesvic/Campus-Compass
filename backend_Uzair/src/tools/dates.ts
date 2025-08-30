@@ -1,19 +1,31 @@
+// src/tools/dates.ts
+import fs from "fs";
+import path from "path";
 import dayjs from "dayjs";
-import data from "../data/uac_key_dates.json";
-import { PlanItem } from "../lib/types";
 
-export function getUpcomingDates(): PlanItem[] {
-  const now = dayjs();
-  const upcoming = data.milestones
-    .map(m => ({
-      id: m.id,
-      title: m.title,
-      due: dayjs(m.date).toISOString(),
-      steps: ["Set up your UAC account", "Prepare ID and results"],
-      why: m.why
-    }))
-    .filter(m => dayjs(m.due).isAfter(now))
-    .sort((a, b) => +new Date(a.due) - +new Date(b.due));
+type UacDate = { label?: string; iso?: string; date?: string };
 
-  return upcoming.slice(0, 3); // next 3
+// Try to load the next UAC date from src/data/uac_key_dates.json.
+// If anything fails, fall back to 7 days from now.
+function computeFirstDue(): string {
+  try {
+    const p = path.resolve(__dirname, "../data/uac_key_dates.json");
+    const raw = JSON.parse(fs.readFileSync(p, "utf8"));
+    const list: UacDate[] = raw?.dates ?? raw ?? [];
+
+    const now = dayjs();
+    const upcoming = list
+      .map(d => dayjs(d.iso ?? d.date))
+      .filter(d => d.isValid() && d.isAfter(now))
+      .sort((a, b) => a.valueOf() - b.valueOf())[0];
+
+    return (upcoming ?? now.add(7, "day")).startOf("day").toISOString();
+  } catch {
+    return dayjs().add(7, "day").startOf("day").toISOString();
+  }
 }
+
+// This is what agent.ts uses
+export const firstDue = computeFirstDue();
+
+// If you want more dates later, export helpers here (e.g. next change-of-preference window).

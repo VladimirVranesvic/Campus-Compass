@@ -1,7 +1,0 @@
-{
-  "milestones": [
-    { "id": "apply_open", "title": "Start your UAC application", "date": "2025-08-01", "why": "Application window opens." },
-    { "id": "change_close", "title": "Change of Preference closes", "date": "2025-12-15", "why": "Last chance to adjust preferences." },
-    { "id": "main_offers", "title": "Main Round Offers", "date": "2026-01-15", "why": "Universities issue offers." }
-  ]
-}
