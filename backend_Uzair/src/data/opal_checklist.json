@@ -1,0 +1,13 @@
+{
+  "steps": [
+    "Create or log in to your Transport Concession account",
+    "Order or link your Opal card",
+    "Ask your uni to approve your proof of entitlement",
+    "Tap on/off once your card arrives"
+  ],
+  "docs": ["Student ID","Enrolment evidence","Personal details"],
+  "links": [
+    { "label": "NSW Opal tertiary concession", "href": "https://www.transportnsw.info/tickets-opal/opal/opal-for-students" }
+  ],
+  "why": "Student concession halves public transport fares in NSW."
+}
